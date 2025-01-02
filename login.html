@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1 style="text-align: center;">Welcome to Login Page</h1>
+    </head>
+    <style>
+        body{background-color: aquamarine;}
+    </style>
+    <body>
+        <form id="loginForm" style="text-align: center;">
+            <label for="username" >Username</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <br>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+
+        <script>
+            document.getElementById("loginForm").addEventListener("submit",function(event){
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+                if(username==='' || password===''){
+                    alert("Please enter the details");
+                    event.preventDefault();
+                }
+                else if(password.length < 6){
+                    alert("Password must be 6 characters");
+                    event.preventDefault();
+                }
+                else{
+                    alert("Loggined Succesfully");
+                }
+            });
+        </script>
+    </body>
+</html> 
+
